@@ -1,0 +1,107 @@
+{
+  "pinned_panels": [],
+  "description": "",
+  "filters": [],
+  "options": {
+    "auto_apply_filters": true,
+    "hide_panel_titles": false,
+    "hide_panel_borders": false,
+    "use_margins": true,
+    "sync_colors": false,
+    "sync_tooltips": false,
+    "sync_cursor": true
+  },
+  "panels": [
+    {
+      "id": "980a6907-e3f6-455c-ad3c-fda55cc7ffdf",
+      "type": "vis",
+      "grid": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 15
+      },
+      "config": {
+        "type": "pie",
+        "title": "visualization",
+        "sampling": 1,
+        "ignore_global_filters": false,
+        "data_source": {
+          "type": "data_view_reference",
+          "ref_id": "security-solution-default"
+        },
+        "legend": {
+          "nested": false,
+          "truncate_after_lines": 1,
+          "visibility": "auto",
+          "position": "right"
+        },
+        "styling": {
+          "values": {
+            "visible": true,
+            "mode": "percentage",
+            "percent_decimals": 2
+          },
+          "labels": {
+            "visible": true,
+            "position": "outside"
+          }
+        },
+        "metrics": [
+          {
+            "format": {
+              "type": "number",
+              "decimals": 0,
+              "compact": false
+            },
+            "empty_as_null": false,
+            "operation": "count"
+          }
+        ],
+        "group_by": [
+          {
+            "operation": "terms",
+            "fields": [
+              "kibana.alert.workflow_status"
+            ],
+            "limit": 9,
+            "other_bucket": {
+              "include_documents_without_field": true
+            },
+            "rank_by": {
+              "type": "metric",
+              "metric_index": 0,
+              "direction": "desc"
+            },
+            "color": {
+              "mode": "categorical",
+              "palette": "default",
+              "mapping": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "80cfc3c4-c413-4553-814d-641f93922607",
+      "type": "discover_session",
+      "grid": {
+        "x": 24,
+        "y": 0,
+        "w": 24,
+        "h": 15
+      },
+      "config": {
+        "ref_id": "4d8e26ba-3359-4194-83b0-c78ce13ccf98",
+        "selected_tab_id": "07b658f1-352e-4931-88ab-c758b6e08d61",
+        "overrides": {}
+      }
+    }
+  ],
+  "query": {
+    "expression": "",
+    "language": "kql"
+  },
+  "tags": [],
+  "title": "Dashboard [2026-11-21T00:25:44.954+05:30]"
+}
